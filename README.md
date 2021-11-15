@@ -1,6 +1,6 @@
 # Gas Toggle Create Duration Time
 
-仕事中の空白時間となった時間にtime entryを追加するgasプログラム
+仕事中の空白時間(休憩時間を除く）となった時間にtime entryを追加するgasプログラム
 
 ![](img/2021-11-15-09-10-30.png)
 
