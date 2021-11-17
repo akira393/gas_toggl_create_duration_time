@@ -1,14 +1,21 @@
-# Gas Toggle Create Duration Time
+# Gas Toggl Create Duration Time
 
-仕事中の空白時間(休憩時間を除く）となった時間にtime entryを追加するgasプログラム
+togglの空白の時間帯を特定の作業内容で埋めてくれるGASアプリケーション
+考えられるユースケースは、仕事中に、測定していなかった時間帯にNo Countを示す作業内容で埋めている
+## Demo
 
+- 左側が、GASプログラムを実行する前
+- 右側が、GASプログラムを実行した後
 ![](img/2021-11-15-09-10-30.png)
 
+## Features
+
+- togglで計測していない時間を特定の作業内容で埋めることができる
+- GASアプリケーション内からToggle のapiを実行している
 
 > [togglの公式のapi doc](https://github.com/toggl/toggl_api_docs)を参照
 
-## setup
-
+## Usage
 
 ```bash
 $ git clone this repository
@@ -27,11 +34,11 @@ change `.clasp.json`
 
 自身の環境に応じて、残りの設定を行う
 
-### 仕事中のtime_entryのみを取得できるようにフィルタリングの設定を行う
+### 空白時間を埋めたいプロジェクト・クライアントの取得する
 
 `./src/togglutils.js`77行目を変更する
 
-- 仕事のデータのみを取りたい場合は何かしらのフィルタリング処理を行うための設定を行う
+- 仕事のデータのみを取りたい場合は何かしらのフィルタリング処理を行う
 - 例として、clientの名前に〇〇会社とあれば、
 
 ```bash
@@ -94,3 +101,10 @@ GASPのトリガーを設定する
 ![](img/2021-11-15-09-19-35.png)
 
 `./src/main.js`の`main()`を定期実行
+
+## Author
+- [blog](https://akirano-blog.com)
+
+## License
+
+[LICENSE](./LICENSE.md)
