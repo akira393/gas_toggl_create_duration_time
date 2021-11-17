@@ -73,6 +73,11 @@ function getWorkReportsDetaileds(date) {
   const datas = getReportsDetaileds(date);
   for (var i = 0; i < datas.length; i++) {
     var data = datas[i];
+    //time entryのデータにクライアントが設定されていないものは、skipする
+    if(data.client==undefined){
+      console.log("skip:no client",data)
+      continue
+    }
     //仕事中のデータを抽出するためにフィルタリングする
     if (data.client.indexOf("xxxx") != -1) {
       work_data.push(data)
